@@ -1,32 +1,32 @@
-# Backend de Transferencias - NestJS + TypeORM + PostgreSQL
+# 🚀 Backend de Transferencias - NestJS + TypeORM + PostgreSQL
 
 Este proyecto es un backend para la gestión de transferencias bancarias entre usuarios, desarrollado con [NestJS](https://nestjs.com/) y [TypeORM](https://typeorm.io/) usando una base de datos PostgreSQL.
 
 ---
 
-## ¿Cómo funciona el backend?
+## 🛠️ ¿Cómo funciona el backend?
 
-### Arquitectura
+### 🏗️ Arquitectura
 - **NestJS** (Node.js) + **TypeORM** + **PostgreSQL**.
 - Código modular: `usuarios`, `bancos` y `transferencias` (cada uno con entidad, servicio y controlador).
 
-### Entidades
+### 🗂️ Entidades
 - **UsuariosTricot**: Usuarios.
 - **Bancos**: Bancos.
 - **Transferencias**: Transferencias entre usuarios y bancos (con relaciones).
 
-### Servicios y Controladores
+### ⚙️ Servicios y Controladores
 - Los servicios (`*.service.ts`) contienen la lógica de negocio.
 - Los controladores (`*.controller.ts`) exponen endpoints HTTP para crear y consultar transferencias.
 
-### Flujo de una transferencia
+### 🔄 Flujo de una transferencia
 1. Valida que los usuarios y bancos existen.
 2. Crea una nueva transferencia y la guarda en la base de datos.
 3. Devuelve la transferencia creada.
 
 ---
 
-## Instalación y uso rápido
+## ⚡ Instalación y uso rápido
 
 1. **Clona el repositorio:**
    ```sh
@@ -43,9 +43,9 @@ Este proyecto es un backend para la gestión de transferencias bancarias entre u
 
 ---
 
-## Comandos útiles
+## 📝 Comandos útiles
 
-### Compilar y ejecutar el proyecto
+### ▶️ Compilar y ejecutar el proyecto
 
 - **Desarrollo:**
   ```sh
@@ -60,7 +60,7 @@ Este proyecto es un backend para la gestión de transferencias bancarias entre u
   npm run start:prod
   ```
 
-### Tests
+### 🧪 Tests
 
 - **Unit tests:**
   ```sh
@@ -77,7 +77,7 @@ Este proyecto es un backend para la gestión de transferencias bancarias entre u
 
 ---
 
-## Endpoints principales
+## 📡 Endpoints principales
 
 - **POST /transferencias**
   - Crea una transferencia.
@@ -98,11 +98,11 @@ Este proyecto es un backend para la gestión de transferencias bancarias entre u
 
 ---
 
-## Recomendaciones
-- No subas tu archivo `.env` ni contraseñas a GitHub.
-- El archivo `.gitignore` ya está configurado para ignorar archivos sensibles y carpetas innecesarias.
+## 📝 Recomendaciones
+- ❌ No subas tu archivo `.env` ni contraseñas a GitHub.
+- ✅ El archivo `.gitignore` ya está configurado para ignorar archivos sensibles y carpetas innecesarias.
 
 ---
 
-## Licencia
+## 📄 Licencia
 MIT
