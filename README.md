@@ -96,3 +96,85 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+
+# Backend de Transferencias - NestJS + TypeORM + PostgreSQL
+
+Este proyecto es un backend para la gestión de transferencias bancarias entre usuarios, desarrollado con [NestJS](https://nestjs.com/) y [TypeORM](https://typeorm.io/) usando una base de datos PostgreSQL.
+
+---
+
+## ¿Cómo funciona tu backend?
+
+### 1. Arquitectura
+- Usas **NestJS** (un framework de Node.js) con **TypeORM** para conectarte a una base de datos PostgreSQL.
+- El código está organizado en módulos: `usuarios`, `bancos` y `transferencias`, cada uno con su entidad, servicio y controlador.
+
+### 2. Entidades
+- **UsuariosTricot**: Representa a los usuarios.
+- **Bancos**: Representa los bancos.
+- **Transferencias**: Representa las transferencias entre usuarios y bancos, con relaciones a las otras entidades.
+
+### 3. Servicios
+- Los servicios (`*.service.ts`) contienen la lógica de negocio, como crear y buscar transferencias, validando que los usuarios y bancos existan antes de guardar una transferencia.
+
+### 4. Controladores
+- Los controladores (`*.controller.ts`) exponen endpoints HTTP (por ejemplo, `/transferencias`) para crear y consultar transferencias usando los servicios.
+
+### 5. Flujo de una transferencia
+- Cuando haces un POST a `/transferencias` con los datos correctos, el backend:
+  1. Valida que los usuarios y bancos existen.
+  2. Crea una nueva transferencia y la guarda en la base de datos.
+  3. Devuelve la transferencia creada.
+
+---
+
+## Instalación y uso
+
+1. **Clona el repositorio:**
+   ```sh
+   git clone https://github.com/tu-usuario/tu-repo.git
+   cd tu-repo
+   ```
+2. **Instala las dependencias:**
+   ```sh
+   npm install
+   ```
+3. **Configura la base de datos:**
+   - Crea un archivo `.env` (no se sube a GitHub) con tus credenciales de PostgreSQL si lo necesitas.
+   - Asegúrate de que la configuración en `src/app.module.ts` coincida con tu entorno.
+4. **Ejecuta el proyecto:**
+   ```sh
+   npm run start:dev
+   ```
+
+---
+
+## Endpoints principales
+
+- **POST /transferencias**
+  - Crea una transferencia.
+  - Ejemplo de body:
+    ```json
+    {
+      "monto": 1000,
+      "nroCuenta": 123456,
+      "usuarioOrigen": { "id": 1 },
+      "usuarioDestino": { "id": 2 },
+      "bancoOrigen": { "id": 1 },
+      "bancoDestino": { "id": 2 }
+    }
+    ```
+
+- **GET /transferencias**
+  - Devuelve todas las transferencias registradas.
+
+---
+
+## Recomendaciones
+- No subas tu archivo `.env` ni contraseñas a GitHub.
+- El archivo `.gitignore` ya está configurado para ignorar archivos sensibles y carpetas innecesarias.
+
+---
+
+## Licencia
+MIT
