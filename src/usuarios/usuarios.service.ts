@@ -18,4 +18,8 @@ export class UsuariosService {
   findAll() {
     return this.repo.find();
   }
+  async findByRut(rut: string): Promise<UsuariosTricot | null> {
+    return this.repo.findOneBy({ rut });
+  }
+  
 }

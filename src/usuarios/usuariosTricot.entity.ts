@@ -23,4 +23,18 @@ export class UsuariosTricot {
 
   @OneToMany(() => Transferencias, (t) => t.usuarioDestino)
   transferenciasDestino: Transferencias[];
+
+  @Column()
+  password: string;
+
+  @Column({
+  type: 'numeric',
+  precision: 12,
+  scale: 2,
+  transformer: {
+    to: (value: number) => value,
+    from: (value: string) => parseFloat(value),
+  },
+})
+saldo: number;
 }
